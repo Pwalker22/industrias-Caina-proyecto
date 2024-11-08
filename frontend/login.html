@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="./Css/menu.css">
+    <link rel="stylesheet" href="./Css/logeo.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="#" class="logo"><img src="./img/Logo.jpg" alt="Industrias Caina"></a>
+        </div>
+        <nav>
+            <ul id="menu">
+                <li><a href="./Index.html">INICIO</a></li>
+                <li><a href="./servicios.html">SERVICIOS</a></li>
+                <li><a href="./trabajos.html">TRABAJOS</a></li>
+                <li><a href="./contacto.html">COTIZACION</a></li>
+            </ul>
+        </nav>
+        <div class="auth-buttons">
+            <a href="#" id="authButton"><i class='bx bx-log-in'></i> Ayuda</a>
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+            <span>&#9776;</span>
+        </div>
+    </header>
+    <br><br><br><br>
+    <div class="form-container">
+        <div class="col col-1">
+            <div class="image-layer">
+                <br><br><br><br><br><br>
+                <img src="./img/motor1.png" class="form-image-main" alt="Descripción de la imagen">
+                <img src="./img/motor2.png" class="form-image-m1" alt="Descripción de la imagen">
+                <img src="./img/motor3.png" class="form-image-m2" alt="Descripción de la imagen">
+                <img src="./img/tablero.png" class="form-image-m3" alt="Descripción de la imagen">    
+            </div>
+            <br><br><br><br><br><br><br>
+            <p class="featured-words">"Impulsando el futuro con cada  <span>gota de agua."</span></p>
+        </div>
+        <div class="col col-2">
+            <div class="btn-box">
+                <button class="btn btn-1" id="login">INICIAR SESIÓN</button>
+                <button class="btn btn-2" id="register">REGISTRO</button>
+            </div>
+            <!-- Formulario de inicio de sesión -->
+            <div class="login-form" id="login-form">
+                <div class="form-title">
+                    <span>INICIAR SESIÓN</span>
+                </div>
+                <div class="form-inputs">
+                    <div class="input-box">
+                        <input type="email" id="login-email" class="input-field" placeholder="Correo" required>
+                        <i class="bx bx-user icon"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" id="login-password" class="input-field" placeholder="Contraseña" required>
+                    </div>
+                    <div class="forgot-pass">
+                        <a href="#">Olvidé mi contraseña</a>
+                    </div>
+                    <div class="input-box">
+                        <button class="input-submit" id="login-btn">
+                            <span>Sign In</span>
+                            <i class="bx bx-right-arrow-alt"></i>
+                        </button>
+                    </div>
+                </div>  
+                <div class="social-login">
+                    <i class="bx bxl-linkedin"></i>
+                    <i class="bx bxl-tiktok"></i>
+                    <i class="bx bxl-whatsapp"></i>
+                    <i class="bx bxl-facebook"></i>
+                    <i class="bx bxl-instagram"></i>
+                </div>
+            </div>
+            <!-- Formulario de registro -->
+            <div class="register-form" id="register-form">
+                <div class="form-title">
+                    <span>Crear usuario</span>
+                </div>
+                <div class="form-inputs">
+                    <div class="input-box">
+                        <input type="text" id="register-username" class="input-field" placeholder="Nombre usuario" required>
+                        <i class="bx bx-user icon"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="email" id="register-email" class="input-field" placeholder="Correo" required>
+                        <i class="bx bx-envelope icon"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" id="register-password" class="input-field" placeholder="Contraseña" required>
+                        <div class="strength-indicator">
+                            <div id="strength-bar" class="strength-bar"></div>
+                        </div>
+                    </div>
+                    <div class="input-box">
+                        <button class="input-submit" id="register-btn">
+                            <span>Sign Up</span>
+                            <i class="bx bx-right-arrow-alt"></i>
+                        </button>
+                    </div>
+                </div>  
+                <div class="social-login">
+                    <i class="bx bxl-linkedin"></i>
+                    <i class="bx bxl-tiktok"></i>
+                    <i class="bx bxl-whatsapp"></i>
+                    <i class="bx bxl-facebook"></i>
+                    <i class="bx bxl-instagram"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./Js/login/logeo.js"></script>
+    <script src="./Js/Menu.js"></script>
+    <script src="./Js/login/auth.js"></script>
+</body>
+</html>

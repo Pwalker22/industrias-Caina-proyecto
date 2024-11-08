@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consola de Administrador</title>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./admin.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Consola de Administración</h1>
+            <div class="date-time-weather">
+                <p id="date-time"></p>
+                <div class="admin-info">
+                    <span class="admin-label">Administrador_</span>
+                    <span id="admin-name" class="admin-name">Data</span>
+                    <ul id="admin-menu" class="admin-menu hidden">
+                        <li><a href="#" id="update-admin">Actualizar Datos</a></li>
+                        <li><a href="#" id="logoutLink" onclick="logout()">Salir</a></li>
+                    </ul>                                               
+                </div>
+                <p id="weather"></p>
+            </div>
+        </header>
+        
+        <nav>
+            <ul>
+                <li><a href="#reservas">Reservas</a></li>
+                <li><a href="#quejas">Quejas y Reclamos</a></li>
+                <li><a href="#usuarios">Usuarios</a></li>
+            </ul>
+        </nav>
+
+        <section id="reservas">
+            <h2>Reservas de Usuarios</h2>
+            <button onclick="window.location.href='./reservas admin/reservasAdmin.html'">Ver Todas las Reservas</button>
+        </section>
+        
+
+        <section id="quejas">
+            <h2>Quejas y Reclamos</h2>
+            <button onclick="window.location.href='./reclamos admin/reclamosAdmin.html'">Ver Todas las quejas</button>
+        </section>
+
+        <section id="usuarios">
+            <h2>usuarios</h2>
+            <button onclick="window.location.href='./usuarios admin/usuariosAdmin.html'">Ver Todos los usuarios</button>
+        </section>
+
+        <section id="garantias">
+            <h2>garantias</h2>
+            <button onclick="window.location.href='./garantias admin/garantiasAdmin.html'">Ver Todas las solicitudes de garantias</button>
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../consola_usuarios/js/menu.js"></script>
+    <script src="./admin.js"></script>
+</body>
+</html>

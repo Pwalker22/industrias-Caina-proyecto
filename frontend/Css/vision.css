@@ -1,0 +1,64 @@
+.vision-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 50px 20px;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #000000;
+    margin-top: 80px; 
+    width: 100%;
+    max-width: 1200px;
+}
+
+.vision-text {
+    max-width: 500px;
+}
+
+.vision-text h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.vision-text p {
+    font-size: 1.1em;
+    line-height: 1.5em;
+    margin-bottom: 30px;
+}
+
+.discover-button {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: #000000;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.discover-button:hover {
+    background-color: #2577bb;
+    color: #ffffff;
+
+}
+
+.vision-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .vision-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .vision-text {
+        max-width: 100%;
+    }
+
+    .vision-image img {
+        max-width: 80%;
+    }
+}

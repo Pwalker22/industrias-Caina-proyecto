@@ -1,0 +1,147 @@
+/* Asegúrate de que los estilos solo afecten al contenido dentro del article */
+article {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Estilos para la calendar-container dentro del article */
+article .calendar-container {
+    display: flex;
+    gap: 20px;
+}
+
+/* Estilos para el calendar y reserved-events dentro del article */
+article .calendar,
+article .reserved-events {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 360px; /* Ancho fijo para uniformidad */
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
+}
+
+/* Estilo para la carta de eventos reservados con desplazamiento */
+article .reserved-events {
+    max-height: 830px; /* Altura máxima del contenedor */
+    overflow-y: auto;  /* Permite el desplazamiento vertical si el contenido es más grande que el contenedor */
+}
+
+/* Estilo para el header dentro del article */
+article .mama {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+article .mama h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+article .mama button {
+    background-color: #0061a8;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+article .mama button:hover {
+    background-color: #004a7c;
+}
+
+/* Estilo para calendar-days dentro del article */
+article #calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+article .day {
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+article .day.disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+article button {
+    background-color: #0061a8;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+article button:hover {
+    background-color: #004a7c;
+}
+
+article .image-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+article #month-image {
+    width: 100%; /* Ajusta el ancho a 100% del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    max-width: 500px; /* Limita el ancho máximo para mantener la uniformidad */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+article .reservation-message {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 16px;
+    color: #000000; /* Color para el mensaje de reserva */
+}
+
+/* Estilos para la tabla de eventos reservados dentro del article */
+article #reserved-table {
+    width: 100%;
+    border-collapse: collapse; /* Elimina el espacio entre las celdas */
+    margin-top: 20px; /* Espacio superior para separar de otros elementos */
+}
+
+article #reserved-table th,
+article #reserved-table td {
+    padding: 12px; /* Espacio dentro de las celdas */
+    text-align: left;
+    border: 1px solid #ddd; /* Color de borde de la tabla */
+}
+
+article #reserved-table th {
+    background-color: #f4f4f4; /* Color de fondo de los encabezados */
+    color: #333; /* Color del texto de los encabezados */
+    font-weight: bold;
+    border-bottom: 2px solid #0061a8; /* Borde inferior más grueso para destacar encabezados */
+}
+
+article #reserved-table td {
+    background-color: #fff; /* Color de fondo de las celdas */
+    color: #555; /* Color del texto de las celdas */
+}
+
+article #reserved-table tr:nth-child(even) td {
+    background-color: #f9f9f9; /* Alternar el color de fondo para las filas pares */
+}
+
+article #reserved-table tr:hover td {
+    background-color: #e0f7fa; /* Color de fondo al pasar el cursor sobre una fila */
+}
+
+article #reserved-table td:last-child {
+    text-align: center; /* Alinear el texto de la última columna al centro */
+}

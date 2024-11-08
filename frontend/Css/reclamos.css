@@ -1,0 +1,164 @@
+body{
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    min-height: 100vh; 
+}
+form {
+    max-width: 500px; 
+    margin: 0 auto; 
+    padding: 20px;
+    border-radius: 10px;
+    box-sizing: border-box; 
+}
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+form input[type="text"],
+form input[type="number"],
+form textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-size: 1em;
+}
+form input[type="submit"],
+form input[type="reset"] {
+    margin-top: 10px;
+    width: calc(50% - 10px);
+    padding: 10px;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+}
+.main {
+    flex: 1; 
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start; 
+    padding-top: 20px; 
+}
+
+.vision-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #000000;
+    margin: 80px auto 0; 
+    width: 100%;
+    max-width: 800px;
+    border-radius: 30px;
+    box-sizing: border-box;
+}
+
+.vision-text {
+    max-width: 500px;
+}
+
+.vision-text h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.vision-text p {
+    font-size: 1.1em;
+    line-height: 1.5em;
+    margin-bottom: 30px;
+    
+}
+
+.discover-button {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: #000000;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 90px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.discover-button:hover {
+    background-color: #2577bb;
+    color: #ffffff;
+}
+
+.vision-image img {
+    max-width: 50%;
+    display: block;
+    margin: 0 auto; 
+
+}
+
+#iconos25{
+    max-width: 50%;
+    display: flex;
+    margin: 0 auto; 
+}
+
+@media (max-width: 768px) {
+    body {
+        overflow: auto;
+    }
+    .main {
+        padding-top: 10px; 
+    }
+    .vision-section {
+        flex-direction: column;
+        text-align: center;
+        margin: 40px auto 0; 
+    }
+
+    .vision-text {
+        max-width: 90%;
+        padding-left: 50px; 
+    }
+
+    .vision-image img {
+        max-width: 80%;
+    }
+
+    form {
+        width: 90%;
+        max-width: 400px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .social-login {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-login i {
+        font-size: 1.5em;
+    }
+
+    .vision-section {
+        padding: 10px;
+    }
+
+    .vision-text h2 {
+        font-size: 2em;
+    }
+
+    .vision-text p {
+        font-size: 1em;
+    }
+
+    .discover-button {
+        padding: 8px 20px;
+    }
+
+    form {
+        width: 100%;
+        max-width: 300px; 
+    }
+}

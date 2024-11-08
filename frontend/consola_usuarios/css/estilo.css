@@ -1,0 +1,257 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url(https://static.vecteezy.com/system/resources/previews/002/297/060/non_2x/abstract-white-gradient-background-free-vector.jpg);
+  font-family: 'Signika', sans-serif;
+  font-size: 21px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+header {
+  display: flex;
+  padding: 10px 0; /* Espacio en los extremos */
+  justify-content: space-between; /* Alinea los elementos a los extremos */
+  align-items: center; /* Alinea verticalmente */
+  background: #dedede;
+  position: fixed;
+  box-shadow: 0px 8px 25px rgba(109, 109, 109, 0.5); /* Sombra en la parte inferior */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 991;
+  -webkit-backdrop-filter: blur(10px); /* Efecto borroso */
+  backdrop-filter: blur(10px); /* Soporte para navegadores webkit */
+}
+
+
+.header-right {
+  display: flex; /* Alinea los elementos en una fila */
+  align-items: center; /* Alinea los elementos verticalmente */
+  gap: 10px; /* Ajusta el espacio entre los elementos según lo necesites */
+}
+
+.icon-link, .settings {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-link i, .settings i {
+  font-size: 18px; /* Ajusta el tamaño del icono */
+  padding: 0;
+  margin: 0;
+  color: #000; /* Cambia el color del icono si es necesario */
+}
+
+.datetime {
+  margin-right: auto; /* Mueve el elemento de la fecha a la izquierda */
+}
+
+header span {
+  margin-left: 15px; /* Espacio entre los iconos */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+  position: relative; /* Necesario para posicionar los submenús */
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%; /* Posiciona el menú justo debajo del ícono */
+  left: 95%; /* Centra el submenú en relación con el ícono */
+  transform: translateX(-50%); /* Centra el submenú horizontalmente */
+  background: #dedede; /* Fondo blanco semi-transparente */
+  border: 1px solid #cccccc;
+  padding: 10px;
+  z-index: 1;
+  box-shadow: 0px 4px 8px rgba(109, 109, 109, 0.5); /* Sombra para los submenús */
+  -webkit-backdrop-filter: blur(10px); /* Efecto borroso para el fondo */
+  backdrop-filter: blur(10px); /* Soporte para navegadores webkit */
+}
+
+.submenu a {
+  display: block;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: #000000;
+}
+
+.submenu a:hover {
+  background-color: #0062ff;
+  color: #ffffff; /* Cambia el color del texto al pasar el mouse sobre el enlace */
+}
+
+
+
+
+/* Estilo para la fecha y hora */
+.datetime {
+  margin-left: 15px; /* Espacio entre el último icono y la fecha/hora */
+  font-size: 14px; /* Tamaño de la fuente */
+}
+
+
+
+.menu {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.main {
+  position: relative;
+  top: 50px;
+  padding-top: 20px;
+}
+
+aside {
+  width: 60px;
+  background: rgba(255, 255, 255, 0.3); /* Fondo blanco semi-transparente */
+  padding: 0 0 10px 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  box-shadow: 0px 3px 5px rgba(2, 0, 0, 0.5);
+  overflow: hidden;
+  z-index: 99;
+  -webkit-backdrop-filter: blur(10px); /* Efecto borroso */
+  backdrop-filter: blur(10px); /* Soporte para navegadores webkit */
+}
+
+
+aside ul {
+  list-style: none;
+  width: 100%;
+}
+
+aside ul li {
+  border-bottom: 1px solid #ccc;
+  padding: 10px 20px;
+  position: relative;
+}
+
+aside ul li a {
+  font-size: 14px;
+  color: #4a4a4a;
+  text-decoration: none;
+  text-transform: uppercase;   
+  white-space: nowrap;
+  display: inline-block;
+}
+
+aside ul li a span {
+  display: inline-block;
+  vertical-align: middle;
+  color: #000;
+  width: 38px;
+}
+
+article {
+  background: #ffffff00 ;
+  background-size: cover;
+  top: auto;
+  width: 92%;
+  height: 100vh;
+  margin-left: 7%;
+  border-radius: 15px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+
+aside ul li:hover {
+  background: #fff;
+  box-shadow: inset 0px 0px 77px #dedede;
+}
+
+aside ul li a span.notif {
+  position: absolute;
+  top: 8px;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  right: 10px;
+  background: #343436;
+  line-height: 31px;
+  border-radius: 100%;
+  color: #fff;
+}
+
+.red {
+  background: #e74c3c !important;
+  box-shadow: 0px 0px 10px #e74c3c;
+}
+
+.yellow {
+  background: #f1c40f !important;
+  box-shadow: 0px 0px 10px #f1c40f;
+}
+
+.green {
+  background: #27ae60 !important;
+  box-shadow: 0px 0px 10px #27ae60;
+}
+
+aside ul li a span.notif.green,
+aside ul li a span.notif.yellow,
+aside ul li a span.notif.red {
+  width: 10px;
+  height: 10px;
+  color: transparent;
+  right: 5px;
+  transition: all 0.2s ease;
+}
+
+aside ul li:hover a span.notif.red,
+aside ul li:hover a span.notif.yellow,
+aside ul li:hover a span.notif.green {
+  width: 30px;
+  height: 30px;
+  color: #fff;
+  right: 15px;
+  top: 10px;
+}
+
+aside.keep.width {
+  width: 280px;
+}
+
+aside.keep.width ul li a span.notif {
+  width: 30px;
+  height: 30px;
+  right: 1px;
+  color: #fff;
+  box-shadow: 0px 0px 10px transparent;
+  top: 8px;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0; /* Hace que el texto sea invisible */
+  }
+}
+
+.blink {
+  animation: blinker 0.6s linear infinite;
+}
+
+p.blink.mah {
+  text-align: center;
+  line-height: 25px;
+  position: relative;
+}
+
+p.blink.mah span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 102, 153, 0);
+  top: 248px;
+  left: 360px;
+}

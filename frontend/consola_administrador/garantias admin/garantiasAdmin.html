@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garantías Administrador</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../table.css">
+    <link rel="stylesheet" href="../admin.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Garantías Administrador</h1>
+            <div class="date-time-weather">
+                <p id="date-time"></p>
+                <p id="weather"></p>
+            </div>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#reservas">Reservas</a></li>
+                <li><a href="#quejas">Quejas y Reclamos</a></li>
+                <li><a href="#usuarios">Usuarios</a></li>
+                <li><a href="#cambio_del_rol">Cambio de Rol</a></li>
+            </ul>
+        </nav>
+
+        <div class="container my-4">
+            <table id="datatable_warranty" class="table table-striped">
+                <caption>Garantías</caption>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Descripción</th>
+                        <th>Número de Cliente</th>
+                        <th>Marca</th>
+                        <th>Lugar</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody_warranty"></tbody>
+            </table>
+            <button onclick="window.location.href='../admin.html'">Consola Admin</button>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+        <script src="./garantiasAdmin.js"></script>
+        <script src="../admin.js"></script>
+        <script src="../../consola_usuarios/js/menu.js"></script>
+    </div>
+</body>
+</html>

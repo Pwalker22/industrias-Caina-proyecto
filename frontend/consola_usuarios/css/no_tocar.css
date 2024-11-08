@@ -1,0 +1,16 @@
+.scroll-container {
+    height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la pantalla */
+    overflow-y: auto; /* Permite el desplazamiento vertical */
+    -webkit-overflow-scrolling: touch; /* Suaviza el desplazamiento en dispositivos móviles */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+  }
+  
+  .scroll-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+  }
+  
+  main {
+    padding-bottom: 100px; /* Añadir espacio al final del contenido principal */
+  }
+  

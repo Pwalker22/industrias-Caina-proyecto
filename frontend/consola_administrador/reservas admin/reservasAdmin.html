@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Reservas</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../table.css">
+    <link rel="stylesheet" href="../admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Gestión de Reservas</h1>
+        </header>
+
+        <div class="container my-4">
+            <table id="datatable_reservas" class="table table-striped">
+                <caption>Reservas</caption>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nombre Completo</th>
+                        <th>Número de Teléfono</th>
+                        <th>Dirección</th>
+                        <th>Fecha Agendada</th>
+                        <th>Ciudad</th>
+                        <th>Tipo de Servicio</th>
+                        <th>Opciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody_reservas"></tbody>
+            </table>
+            <button onclick="window.location.href='../admin.html'">Consola Admin</button>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+        <script src="./reservasAdmin.js"></script>
+    </div>
+
+    <script>
+        window.updateReservation = updateReservation;
+        window.deleteReservation = deleteReservation;
+    </script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Garantías</title>
+  <link rel="stylesheet" href="./consola_usuarios/css/estilo.css">
+  <link rel="stylesheet" href="./consola_usuarios/css/inicio.css">
+  <link rel="stylesheet" href="./consola_usuarios/css/no_tocar.css">
+  <link rel="stylesheet" href="./css/garantia.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <style>
+    .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap; 
+        border: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <span class="menu"><i class="fa fa-bars"></i></span>
+    
+    <div class="header-right">
+      <span class="datetime" id="datetime"></span>
+      <a href="./consola_usuarios/inicio.html" title="Ir a la página principal">
+        <span class="home"><i class="fa fa-home"></i></span>
+      </a>
+      <span class="user" onclick="toggleMenu('userMenu')"><i class="fa fa-user"></i></span>
+      <div id="userMenu" class="submenu">
+          <a href="../editarPerfil.html">Perfil</a>
+          <a href="#" id="logoutLink">Salir</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="main">
+    <aside class="keep">
+      <ul>
+        <li>
+          <a href="./garantia.html">
+            <span><i class="material-icons">settings</i></span>
+            Garantías
+            <span class="notif red"></span>
+          </a>
+        </li>      
+        <li>
+          <a href="./reclamos.html">
+            <span><i class="material-icons">apps</i></span>
+            Quejas y Reclamos
+            <span class="notif yellow"></span>
+          </a>
+        </li>
+        <li>
+          <a href="./consola_usuarios/agenda.html">
+            <span><i class="material-icons">event</i></span>
+            Reservas
+            <span class="notif green"></span>
+          </a>
+        </li>      
+      </ul>
+    </aside>    
+    <div class="vision-section">
+        <div class="vision-text">
+            <center><h2>Garantías</h2></center>
+            <p>
+              "Bienvenido a nuestra sección de garantías de mantenimiento. Solo se cubren garantías por procedimientos realizados incorrectamente durante la visita del técnico. Por favor, complete los siguientes datos y nos pondremos en contacto contigo a la brevedad."
+            </p>
+            
+            <form id="reclamoForm">
+              
+                <label for="Gmarca" class="visually-hidden">Marca de la Motobomba</label>
+                <input type="text" id="Gmarca" name="Gmarca" class="form-input" placeholder="Marca de la motobomba" required>
+                
+                
+                <label for="Gcliente" class="visually-hidden">Cliente</label>
+                <input type="text" id="Gcliente" name="Gcliente" class="form-input" placeholder="Cliente" required>
+                
+                
+                <label for="Gphone" class="visually-hidden">Teléfono</label>
+                <input type="number" id="Gphone" name="Gphone" class="form-input" placeholder="Teléfono" required>
+                
+             
+                <label for="Glugar" class="visually-hidden">Lugar donde se realizó el mantenimiento</label>
+                <input type="text" id="Glugar" name="Glugar" class="form-input" placeholder="Lugar donde se realizó el mantenimiento" required>
+                
+             
+                <label for="Gmessage" class="visually-hidden">Mensaje</label>
+                <textarea id="Gmessage" name="Gmessage" class="form-input" rows="3" title="Escribe tu mensaje" placeholder="Escribe una breve descripcion del motivo de tu garantia" required></textarea>
+                
+                
+                <input type="submit" class="discover-button" value="Enviar" id="Garantia">
+                <input type="reset" class="discover-button" value="Borrar">
+            </form> 
+        </div>
+    </div>
+  </section>
+  
+</body> 
+<script src="./consola_usuarios/js/menu.js"></script>
+<script src="./consola_usuarios/js/inicio.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="./consola_usuarios/js/garantia/garantia.js"></script>
+</html>

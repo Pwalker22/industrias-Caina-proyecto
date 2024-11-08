@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>quejas y reclamos</title>
+  <link rel="stylesheet" href="./consola_usuarios/css/estilo.css">
+  <link rel="stylesheet" href="./consola_usuarios/css/inicio.css">
+  <link rel="stylesheet" href="./consola_usuarios/css/no_tocar.css">
+  <link rel="stylesheet" href="./Css/reclamos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+  <header>
+    <span class="menu"><i class="fa fa-bars"></i></span>
+    
+    <div class="header-right">
+      <span class="datetime" id="datetime"></span>
+      <a href="./consola_usuarios/inicio.html" title="Ir a la página principal">
+        <span class="home"><i class="fa fa-home"></i></span>
+      </a>
+      <span class="user" onclick="toggleMenu('userMenu')"><i class="fa fa-user"></i></span>
+      <div id="userMenu" class="submenu">
+          <a href="../editarPerfil.html">Perfil</a>
+          <a href="#" id="logoutLink">Salir</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="main">
+    <aside class="keep">
+      <ul>
+        <li>
+          <a href="./garantia.html">
+            <span><i class="material-icons">settings</i></span>
+            garantias
+            <span class="notif red"></span>
+          </a>
+        </li>      
+        <li>
+          <a href="./reclamos.html">
+            <span><i class="material-icons">apps</i></span>
+            quejas y reclamos
+            <span class="notif yellow"></span>
+          </a>
+        </li>
+        <li>
+          <a href="./consola_usuarios/agenda.html">
+            <span><i class="material-icons">event</i></span>
+            reservas
+            <span class="notif green"></span>
+          </a>
+        </li>      
+      </ul>
+    </aside>    
+    <div class="vision-section">
+        <div class="vision-text">
+          <center><h2>Atención al Cliente: Quejas y Reclamos</h2></center>
+            <p>
+              Si tienes alguna queja o reclamo sobre nuestros servicios, por favor, completa este formulario. Nuestro equipo se pondrá en contacto contigo a la brevedad para darte una solución.
+            </p>
+            <!-- Formulario de reclamos -->
+            <form id="reclamoForm">
+                <label for="Cliente"></label>
+                <input type="text" id="Cliente" name="Cliente" placeholder="Nombre del Cliente">
+                
+                <label for="Motivo"></label>
+                <input type="text" id="Motivo" name="Motivo" placeholder="Motivo de la queja">
+                
+                <label for="Gphone"></label>
+                <input type="number" id="Gphone" name="Gphone" placeholder="Teléfono">
+                
+                <label for="Gmessage"></label>
+                <textarea id="Gmessage" rows="3" title="Breve descripción de la queja o reclamo" placeholder="Breve descripción de la queja o reclamo"></textarea>
+                
+                <input type="submit" class="discover-button" value="Enviar" id="Garantia">
+                <input type="reset" class="discover-button" value="Borrar">
+            </form> 
+        </div>
+    </div>
+</body> 
+<script src="./consola_usuarios/js/menu.js"></script>
+<script src="./consola_usuarios/js/inicio.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="./consola_usuarios/js/reclamos//reclamos.js"></script>
+</html>

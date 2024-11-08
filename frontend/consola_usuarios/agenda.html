@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda</title>
+    <link rel="stylesheet" href="./css/estilo.css">
+    <link rel="stylesheet" href="./css/no_tocar.css">
+    <link rel="stylesheet" href="./css/calendario.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <span class="menu"><i class="fa fa-bars"></i></span>
+
+        <div class="header-right"></div>
+            <span class="datetime" id="datetime"></span>
+            <a href="./inicio.html" title="Ir a la página principal">
+                <span class="home"><i class="fa fa-home"></i></span>
+            </a>
+            <span class="user" onclick="toggleMenu('userMenu')"><i class="fa fa-user"></i></span>
+            <div id="userMenu" class="submenu">
+                <a href="../editarPerfil.html">Perfil</a>
+                <a href="#" id="logoutLink">Salir</a>
+        </div>
+    </header>
+
+
+    <section class="main">
+        <aside class="keep">
+            <ul>
+                <li>
+                    <a href="../reclamos.html">
+                        <span><i class="material-icons">settings</i></span>
+                        garanatias
+                        <span class="notif red">1</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../garantia.html">
+                        <span><i class="material-icons">apps</i></span>
+                        quejas y reclamos
+                        <span class="notif yellow">2</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="./agenda.html">
+                        <span><i class="material-icons">event</i></span>
+                        reservas
+                        <span class="notif green">6</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <div class="scroll-container">
+            <article>
+                <div class="calendar-container">
+                    <div class="calendar">
+                        <div class="image-container">
+                            <img id="month-image" src="" alt="Imagen del mes">
+                        </div>
+                        <div class="mama">
+                            <button id="prev-month">‹</button>
+                            <h2 id="month-year"></h2>
+                            <button id="next-month">›</button>
+                        </div>
+                        <div id="calendar-days"></div>
+                    </div>
+                    <div class="reserved-events">
+                        <h2>Mis Reservas</h2>
+                        <div id="reservations-container" class="reservation-message"></div> <!-- Contenedor para mostrar reservas -->
+                    </div>
+                    <div class="reserved-events">
+                        <h2>Nombre de la Empresa</h2>
+                        <table id="reserved-table">
+                            <thead>
+                                <tr>
+                                    <th>Fecha</th>
+                                    <th>Nombre</th>
+                                </tr>
+                            </thead>
+                            <tbody id="reserved-list"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./js/Calendario1.js"></script>
+    <script src="./js/menu.js"></script>
+    <script src="./js/inicio.js"></script>
+    <script>
+        async function loadAndDisplayReservations() {
+            const userId = localStorage.getItem('userId'); 
+        
+            if (!userId) {
+                console.error("No se encontró el ID del usuario en el almacenamiento local");
+                return;
+            }
+        
+            try {
+                const response = await fetch(`http://localhost:3001/api/v1/getScheduling/${userId}`, {
+                    method: 'GET',
+                    headers: {
+                        'Cache-Control': 'no-cache' 
+                    }
+                });
+        
+                if (!response.ok) {
+                    const errorMessage = await response.text();
+                    throw new Error(`Error ${response.status}: ${errorMessage}`);
+                }
+        
+                const result = await response.json();
+                displayReservations(result.data); 
+            } catch (error) {
+                console.error("Error al cargar reservas:", error);
+                const reservationsContainer = document.getElementById('reservations-container');
+                reservationsContainer.innerText = 'no tienes reservas'; 
+            }
+        }
+        
+        function displayReservations(reservations) {
+            const reservationsContainer = document.getElementById('reservations-container');
+            reservationsContainer.innerHTML = '';
+        
+            if (reservations.length === 0) {
+                reservationsContainer.innerText = 'No tienes reservas disponibles. Por favor, crea una ya.';
+                return;
+            }
+        
+            reservations.forEach(reservation => {
+                const reservationElement = document.createElement('div');
+                reservationElement.classList.add('reservation-item');
+                reservationElement.innerHTML = `
+                    <h3>Servicio: ${reservation.typeService}</h3>
+                    <p>Fecha: ${reservation.ScheduledDate}</p>
+                    <p>Nombre: ${reservation.fullName}</p>
+                    <p>Documento: ${reservation.document}</p>
+                    <p>Dirección: ${reservation.direction}</p>
+                    <p>Ciudad: ${reservation.city}</p>
+                    <p>Teléfono: ${reservation.numberPhone}</p>
+                `;
+                reservationsContainer.appendChild(reservationElement);
+            });
+        }
+        
+        document.addEventListener('DOMContentLoaded', loadAndDisplayReservations);
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,273 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url("https://static.vecteezy.com/system/resources/previews/002/297/060/non_2x/abstract-white-gradient-background-free-vector.jpg");
+    color: #333;
+    overflow: hidden;
+}
+
+.container {
+    height: 100vh; /* Usar toda la altura de la ventana */
+    overflow-y: auto; /* Permitir desplazamiento vertical */
+}
+
+/* Estilo opcional para mejorar la experiencia */
+.container::-webkit-scrollbar {
+    width: 0; /* Ocultar scrollbar en WebKit (Chrome, Safari) */
+}
+
+h1, h2 {
+    margin: 0;
+    padding: 10px 0;
+    font-weight: 700;
+}
+
+/* Encabezado */
+header {
+    background-color: #282c34;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    font-size: 32px;
+    letter-spacing: 1.2px;
+}
+
+.date-time-weather {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 14px;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+.date-time-weather p {
+    margin: 0;
+}
+
+/* Navegación */
+nav {
+    background-color: #3a3f47;
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 80px;
+    z-index: 999;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    color: #f0f2f5;
+    text-decoration: none;
+    padding: 10px 30px;
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    border-radius: 8px;
+}
+
+nav ul li a:hover {
+    background-color: #4a90e2;
+    transform: translateY(-3px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Secciones */
+section {
+    margin: 40px auto;
+    padding: 20px 40px;
+    max-width: 1200px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+section h2 {
+    border-bottom: 3px solid #4a90e2;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Estilo para la lista de reservas */
+.reservas-container {
+    margin-top: 20px;
+    max-height: 400px; /* Altura máxima para el contenedor */
+    overflow-y: auto; /* Permitir desplazamiento vertical */
+    border: 1px solid #ccc; /* Borde para definir el área */
+    border-radius: 10px; /* Bordes redondeados */
+    background-color: #f9f9f9; /* Fondo ligero */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.reserva-item {
+    padding: 15px;
+    border-bottom: 1px solid #eaeaea; /* Separador entre elementos */
+}
+
+.reserva-item:last-child {
+    border-bottom: none; /* Sin borde en el último elemento */
+}
+
+.reserva-item h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #4a90e2; /* Color para los nombres */
+}
+
+.reserva-item p {
+    margin: 5px 0; /* Margen entre párrafos */
+    font-size: 14px; /* Tamaño de fuente para detalles */
+}
+
+/* Botones */
+button {
+    padding: 12px 25px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
+    margin-top: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #357ABD;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.hidden {
+    display: none;
+}
+
+.admin-info {
+    display: flex;
+    align-items: center;
+}
+
+.admin-label {
+    margin-right: 0px; /* Espacio entre la etiqueta y el nombre */
+}
+
+.admin-menu {
+    position: absolute; /* Mantenerlo en posición absoluta */
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px; /* Espacio entre el nombre y el menú */
+    padding: 10px 0;
+    z-index: 100;
+
+    /* Ajusta estas propiedades para jugar con la ubicación */
+    top:0%;
+    left: 70%; /* Alineado a la izquierda (puedes usar right: 0; para alinearlo a la derecha) */
+    /* top: 100%; */ /* Opcional: si quieres que el menú esté justo debajo del nombre */
+    transform: translateY(10px); /* Desplazamiento vertical (ajusta según sea necesario) */
+}
+
+.admin-name {
+    padding: 8px 12px; /* Espacio interior */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: transparent; /* Fondo transparente */
+    transition: background-color 0.3s, color 0.3s; /* Transición suave */
+    cursor: pointer; /* Cambiar el cursor a pointer */
+}
+
+.admin-name:hover {
+    background-color: #f0f0f0; /* Color de fondo al pasar el mouse */
+    color: #4a90e2; /* Cambiar color del texto al pasar el mouse */
+}
+
+.admin-menu li {
+    list-style: none; /* Quitar los puntos de la lista */
+}
+
+.admin-menu li a {
+    display: block; /* Para que el área de clic sea más grande */
+    padding: 10px 15px; /* Espacio interior */
+    color: #333; /* Color del texto */
+    text-decoration: none; /* Sin subrayado */
+    transition: background-color 0.3s; /* Transición suave al cambiar el color */
+}
+
+.admin-menu li a:hover {
+    background-color: #f0f0f0; /* Color de fondo al pasar el mouse */
+    color: #4a90e2; /* Cambiar el color del texto al pasar el mouse */
+}
+
+/* Información de usuarios */
+#usuarios p {
+    font-size: 20px;
+    margin: 10px 0;
+    font-weight: 500;
+}
+
+#usuarios span {
+    font-weight: bold;
+    color: #4a90e2;
+    font-size: 22px;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    .admin-info {
+        flex-direction: column; /* Asegura que esté en columna */
+        align-items: center; /* Centra horizontalmente */
+    }
+
+    nav ul li a {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    section {
+        padding: 15px 20px;
+        margin: 20px auto;
+    }
+
+    .date-time-weather {
+        flex-direction: column;
+        text-align: center;
+    }
+}

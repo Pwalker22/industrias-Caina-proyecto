@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Perfil</title>
+  <!-- Enlaces a CSS -->
+  <link rel="stylesheet" href="./consola_usuarios/css/estilo.css">
+  <link rel="stylesheet" href="./consola_usuarios/css/inicio.css">
+  <link rel="stylesheet" href="./consola_usuarios/css/no_tocar.css">
+  <link rel="stylesheet" href="./consola_usuarios/css/editarPerfil.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <!-- Scripts Externos -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- SweetAlert -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <header>
+    <span class="menu"><i class="fa fa-bars"></i></span>
+    
+    <div class="header-right">
+      <span class="datetime" id="datetime"></span>
+      <a href="./consola_usuarios/inicio.html" title="Ir a la página principal">
+        <span class="home"><i class="fa fa-home"></i></span>
+      </a>
+      <span class="user" onclick="toggleMenu('userMenu')"><i class="fa fa-user"></i></span>
+      <div id="userMenu" class="submenu">
+          <a href="../editarPerfil.html">Perfil</a>
+          <a href="#" id="logoutLink">Salir</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="main">
+    <aside class="keep">
+      <ul>
+        <li>
+          <a href="../frontend/garantia.html">
+            <span><i class="material-icons">settings</i></span>
+            garantias
+            <span class="notif red"></span>
+          </a>
+        </li>      
+        <li>
+          <a href="../frontend/reclamos.html">
+            <span><i class="material-icons">apps</i></span>
+             quejas y reclamos
+            <span class="notif yellow"></span>
+          </a>
+        </li>
+        <li>
+          <a href="./consola_usuarios/agenda.html">
+            <span><i class="material-icons">event</i></span>
+            reservas
+            <span class="notif green"></span>
+          </a>
+        </li>      
+      </ul>
+    </aside>    
+  
+    <div class="scroll-container">
+      <div class="container">
+        <div class="form-wrapper">
+          <div class="tabs-container">
+            <ul>
+                <li><a href="#general-info" class="active">Información personal</a></li>
+                <li><a href="#change-password">Cambiar Contraseña</a></li>
+            </ul>
+            <!-- Formulario de Información Personal -->
+            <div id="general-info" class="form-container active">
+                <h4 class="heading">Configuración de la cuenta</h4>
+                <div class="alert-container" id="alert-personal-info"></div>
+                
+                <form id="personalInfoForm">
+                    <label for="Enombre">Nombre</label>
+                    <input type="text" id="Enombre" name="Enombre" placeholder="Nombre" required>
+                    
+                    <label for="Eapellido">Apellido</label>
+                    <input type="text" id="Eapellido" name="Eapellido" placeholder="Apellido" required>
+                    
+                    <label for="Ecorreo">Correo</label>
+                    <input type="email" id="Ecorreo" name="Ecorreo" placeholder="Correo" required>
+                    
+                    <label for="Etelefono">Teléfono</label>
+                    <input type="number" id="Etelefono" name="Etelefono" placeholder="Teléfono" required>
+                    
+                    <div class="buttons-container">
+                        <button class="discover-button" type="submit" id="EinfoPersonal">Guardar cambios</button>
+                        <button class="discover-button" type="reset">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Formulario de Cambio de Contraseña -->
+            <div id="change-password" class="form-container">
+                <h4 class="heading">Cambiar Contraseña</h4>
+                <div class="alert-container" id="alert-change-password"></div>
+                <form id="changePasswordForm">
+                    <label for="Apassword">Contraseña Actual</label>
+                    <input type="password" id="Apassword" name="Apassword" placeholder="Contraseña Actual" required>
+                    
+                    <label for="Npassword">Nueva Contraseña</label>
+                    <input type="password" id="Npassword" name="Npassword" placeholder="Nueva Contraseña" required>
+                    
+                    <label for="Cpassword">Confirmar Contraseña</label>
+                    <input type="password" id="Cpassword" name="Cpassword" placeholder="Confirmar Contraseña" required>
+                    
+                    <div class="buttons-container">
+                        <button class="discover-button" type="submit" id="EcambioContra">Guardar cambios</button>
+                        <button class="discover-button" type="reset">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+          </div>        
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scripts Externos -->
+  <script src="./consola_usuarios/js/menu.js"></script>
+  <script src="./consola_usuarios/js/inicio.js"></script>
+  <script src="./consola_usuarios/js/editarPerfil/editarPerfil.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    $(document).ready(function() {
+        // Maneja el clic en las pestañas
+        $('ul li a').click(function(event) {
+            event.preventDefault(); // Evita que el enlace haga su comportamiento por defecto
+
+            // Oculta todos los formularios
+            $('.form-container').removeClass('active');
+
+            // Muestra el formulario correspondiente
+            var target = $(this).attr('href');
+            $(target).addClass('active');
+
+            // Cambia la clase activa en las pestañas
+            $('ul li').removeClass('active');
+            $(this).parent().addClass('active');
+        });
+    });
+  </script>
+</body>
+</html> 

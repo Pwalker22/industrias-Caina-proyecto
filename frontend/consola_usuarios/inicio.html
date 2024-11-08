@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="./css/estilo.css">
+    <link rel="stylesheet" href="./css/inicio.css">
+    <link rel="stylesheet" href="./css/no_tocar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <span class="menu"><i class="fa fa-bars"></i></span>
+        <div class="header-right">
+            <span class="datetime" id="datetime"></span>
+            <a href="./inicio.html" title="Ir a la página principal">
+                <span class="home"><i class="fa fa-home"></i></span>
+            </a>
+            <span class="user" onclick="toggleMenu('userMenu')"><i class="fa fa-user"></i></span>
+            <div id="userMenu" class="submenu">
+                <a href="../editarPerfil.html">Perfil</a>
+                <a href="#" id="logoutLink">Salir</a>
+            </div>
+        </div>
+    </header>
+  
+    <section class="main">
+        <aside class="keep">
+            <ul>
+                <li>
+                    <a href="../garantia.html">
+                        <span><i class="material-icons">settings</i></span>
+                        garantias
+                        <span class="notif red"></span>
+                    </a>
+                </li>      
+                <li>
+                    <a href="../reclamos.html">
+                        <span><i class="material-icons">apps</i></span>
+                        quejas y reclamos
+                        <span class="notif yellow"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../consola_usuarios/agenda.html">
+                        <span><i class="material-icons">event</i></span>
+                        Reservas
+                        <span class="notif green"></span>
+                    </a>
+                </li>      
+        </aside>
+        <div class="scroll-container">
+            <!-- Todo tu contenido aquí -->
+            <article>
+                <div class="contenido">
+                    <h1>Industrias Caina</h1>
+                    <p>Especialistas en Mantenimiento de Equipos de Presión</p>
+                </div>
+                <main>
+                    <section id="about">
+                        <h2>Sobre Nosotros</h2><br>
+                        <p>Industrias Caina es una microempresa especializada en el mantenimiento y servicios de equipos de presión para acueductos, conjuntos residenciales y sistemas contra incendios. Nuestro objetivo es garantizar la máxima eficiencia operativa de los equipos, prolongando su vida útil y asegurando su funcionamiento óptimo con el menor costo de operación posible.</p>
+                    </section>
+                    <section>
+                        <h2>Servicios Ofrecidos</h2><br>
+                    </section>
+                    <section id="services">
+                        <div class="service" id="monitoring">
+                            <h3>Monitoreo en Tiempo Real</h3>
+                            <p>Visualiza el estado actual de los equipos de presión y accede a gráficos y estadísticas en tiempo real.</p>
+                        </div>
+                        <div class="service" id="maintenance">
+                            <h3>Programación de Mantenimiento</h3>
+                            <p>Planifica y programa mantenimientos preventivos para evitar paradas inesperadas y configura alertas automáticas.</p>
+                        </div>
+                        <div class="service" id="history">
+                            <h3>Historial de Mantenimiento</h3>
+                            <p>Revisa el historial completo de mantenimiento de cada equipo y genera informes detallados.</p>
+                        </div>
+                        <div class="service" id="support">
+                            <h3>Soporte Técnico</h3>
+                            <p>Contacta con nuestro equipo de profesionales altamente capacitados para recibir asesoramiento técnico.</p>
+                        </div>
+                        <div class="service" id="inventory">
+                            <h3>Gestión de Inventario</h3>
+                            <p>Controla el inventario de piezas de repuesto y automatiza pedidos para asegurar disponibilidad.</p>
+                        </div>
+                        <div class="service" id="reports">
+                            <h3>Reportes y Análisis</h3>
+                            <p>Genera reportes personalizados y accede a análisis predictivos para anticipar posibles fallos.</p>
+                        </div>
+                    </section>
+                </main>
+            </article>
+        </div>
+    </section>
+    <script src="../consola_usuarios/js/menu.js"></script>
+    <script src="./js/inicio.js"></script>
+    <script src="../conexion.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
